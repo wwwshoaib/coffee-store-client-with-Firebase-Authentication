@@ -12,7 +12,7 @@ const CoffeeCard = ({ coffee, coffees }) => {
 
     const handleDelete = id => {
 
-        console.log(id);
+        //console.log(id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -26,8 +26,8 @@ const CoffeeCard = ({ coffee, coffees }) => {
 
 
 
-                // console.log("A coffee was deleted!")
-                fetch(`http://localhost:5000/coffee/${id}`, {
+                // ("A coffee was deleted!")
+                fetch(`https://coffee-store-server-wine-pi.vercel.app/coffee/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

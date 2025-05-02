@@ -7,7 +7,7 @@ const Home = () => {
     const loadedCoffees = useLoaderData();
     const [coffees, setCoffees] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/coffee')
+        fetch('https://coffee-store-server-wine-pi.vercel.app/coffee')
             .then(res => res.json())
             .then(data => setCoffees(data));
     }, []);

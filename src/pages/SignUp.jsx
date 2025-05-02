@@ -12,15 +12,15 @@ const SignUp = () => {
        const name = form.name.value;
        const email = form.email.value;
        const password = form.password.value;
-       console.log(email, password);
+     //  console.log(email, password);
        createUser(email, password)
        .then(result => {
-        console.log(result.user)
+       // console.log(result.user)
         // creation time
         const createdAt = result.user.metadata.creationTime;        
         const newUser = {name, email, createdAt}
         // save new user information to database
-        fetch('http://localhost:5000/users', {
+        fetch('https://coffee-store-server-wine-pi.vercel.app/users', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

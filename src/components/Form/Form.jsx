@@ -17,7 +17,7 @@ const Form = () => {
 
         const newCoffee = { name, quantity, supplier, taste, category, details, photo };
 
-        fetch('http://localhost:5000/addcoffee', {
+        fetch('https://coffee-store-server-wine-pi.vercel.app/addcoffee', {
             method: 'POST',
             headers: {
                 'content-Type': 'application/json',
@@ -26,7 +26,6 @@ const Form = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',

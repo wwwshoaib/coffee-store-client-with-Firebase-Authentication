@@ -21,7 +21,7 @@ const UpdateCoffee = () => {
 
         const updatedCoffee = { name, quantity, supplier, taste, category, details, photo };
 
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-store-server-wine-pi.vercel.app/coffee/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-Type': 'application/json',
@@ -30,7 +30,6 @@ const UpdateCoffee = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',

@@ -22,7 +22,7 @@ import Users from "../components/Users/Users";
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/coffee')
+        loader: () => fetch('https://coffee-store-server-wine-pi.vercel.app/coffee')
       },
       {
         path: "/addcoffee",
@@ -31,7 +31,7 @@ import Users from "../components/Users/Users";
       {
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
-        loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+        loader: ({params}) => fetch(`https://coffee-store-server-wine-pi.vercel.app/coffee/${params.id}`)
       },
       {
         path: "/signin",
@@ -44,7 +44,7 @@ import Users from "../components/Users/Users";
       {
         path: "/users",
         element: <Users></Users>,
-        loader: () => fetch('http://localhost:5000/users')
+        loader: () => fetch('https://coffee-store-server-wine-pi.vercel.app/users')
       },
       
      

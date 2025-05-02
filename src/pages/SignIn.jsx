@@ -12,16 +12,15 @@ const SignIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
         signInUser(email, password)
         .then(result => {
-            console.log(result.user)
+            
             alert('Login successfully!')
             //update last login time
             const lastSignInTime = result?.user?.metadata?.lastSignInTime;
             const loginInfo = { email, lastSignInTime }
 
-            fetch(`http://localhost:5000/users`, {
+            fetch(`https://coffee-store-server-wine-pi.vercel.app/users`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/type'
@@ -58,7 +57,7 @@ const SignIn = () => {
                                     <div><a className="link link-hover">Forgot password?</a></div>
                                     <button 
                                         className="btn btn-neutral mt-4">Login</button>
-                                        <p>Add New coffee drinker: <Link to ='/signup'>Sign Up</Link></p>
+                                        <p>Add New coffee drinker: <Link to ='/signup'>Sign Up or Register</Link></p>
                                 </fieldset>
                             </div>
                         </form>
